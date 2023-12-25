@@ -18,14 +18,15 @@ class UserOwnerAvathar extends StatelessWidget {
         width: 84.w,
         height: 70.h,
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10).w,
-            border: Border.all(
-              color: Colors.grey,
-              width: 1.w,
-            ),
-            image: DecorationImage(
-                image: AssetImage(imagePath), fit: BoxFit.fill)),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10).w,
+          border: Border.all(
+            color: Colors.grey,
+            width: 1.w,
+          ),
+          image:
+              DecorationImage(image: AssetImage(imagePath), fit: BoxFit.fill),
+        ),
       ),
     );
   }

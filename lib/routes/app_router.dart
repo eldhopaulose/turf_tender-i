@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:turf_tender/presentation/Welcome_page/welcome_page.dart';
 import 'package:turf_tender/presentation/owner_register_page/owner_register.dart';
 import 'package:turf_tender/presentation/turf_details/turf_details.dart';
+import 'package:turf_tender/presentation/user_home/user_home.dart';
 
 import 'package:turf_tender/presentation/user_register_page/user_register.dart';
 
@@ -28,6 +29,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           path: '/turf',
           page: TurfDetailRoute.page,
+        ),
+        AutoRoute(
+          path: '/home',
+          page: UserHomeRoute.page,
         ),
       ];
 }

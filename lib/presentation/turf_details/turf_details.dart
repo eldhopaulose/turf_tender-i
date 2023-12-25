@@ -29,12 +29,12 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
             onPressed: () {
               context.router.back();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_rounded,
               color: Color(0xFF494949),
             ),
           ),
-          title: Text(
+          title: const Text(
             'TURF DETAILS',
             style: TextStyle(
               color: Color(0xFF494949),
@@ -48,7 +48,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               CarouselSlider(
@@ -65,7 +65,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: 357.w,
                   height: 230.h,
                   clipBehavior: Clip.antiAlias,
@@ -101,7 +101,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                         child: Text(
                           'Lorem ipsum dolor sit amet consectetur. Non nec sollicitudin tellus sagittis nisi. Interdum et ultrices egestas eu sem. Adipiscing velit.',
                           style: TextStyle(
-                            color: Color(0xFF909090),
+                            color: const Color(0xFF909090),
                             fontSize: 15.sp,
                             fontFamily: 'Fira Sans',
                             fontWeight: FontWeight.w300,
@@ -129,7 +129,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                                 ),
                                 SizedBox(
                                   width: 235.w,
-                                  child: Text(
+                                  child: const Text(
                                     'Kakkanad, Infopark Expressway, Kochi, Kerala',
                                     style: TextStyle(
                                       color: Color(0xFF3792C4),
@@ -211,7 +211,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                     SizedBox(height: 20.h),
                     Padding(
                       padding: const EdgeInsets.only(left: 20).r,
-                      child: Text(
+                      child: const Text(
                         'Schedule Appointment',
                         style: TextStyle(
                           color: Colors.black,
@@ -236,7 +236,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                         initialDate: DateTime.now(),
                         textColor: Colors.black,
                         backgroundColor: Colors.white,
-                        selectedColor: Color(0xff3792C4),
+                        selectedColor: const Color(0xff3792C4),
                         locale: Localizations.localeOf(context),
                         onDateSelected: (date) {
                           print(date.toString());
@@ -252,13 +252,13 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                           scrollDirection: Axis.horizontal,
                           child: Row(
                             children: [
-                              DateContainer(date: '09:00 am - 10:00 am'),
+                              const DateContainer(date: '09:00 am - 10:00 am'),
                               SizedBox(width: 5.w),
-                              DateContainer(date: '09:00 am - 10:00 am'),
+                              const DateContainer(date: '09:00 am - 10:00 am'),
                               SizedBox(width: 5.w),
-                              DateContainer(date: '09:00 am - 10:00 am'),
+                              const DateContainer(date: '09:00 am - 10:00 am'),
                               SizedBox(width: 5.w),
-                              DateContainer(date: '09:00 am - 10:00 am'),
+                              const DateContainer(date: '09:00 am - 10:00 am'),
                             ],
                           ),
                         ),
@@ -274,7 +274,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                   height: 45.h,
                   clipBehavior: Clip.antiAlias,
                   decoration: ShapeDecoration(
-                    color: Color(0xFF3792C4),
+                    color: const Color(0xFF3792C4),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(14),
                     ),
@@ -283,12 +283,12 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                     clipBehavior: Clip.hardEdge,
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(Color(0xff3792C4)),
+                          MaterialStateProperty.all(const Color(0xff3792C4)),
                     ),
                     onPressed: () {
                       dialogBuilder(context);
                     },
-                    child: Text(
+                    child: const Text(
                       'BOOK YOUR SLOT',
                       style: TextStyle(
                         color: Colors.white,
@@ -312,9 +312,9 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
 final List<Widget> imageSliders = imgList
     .map((item) => Container(
           child: Container(
-            margin: EdgeInsets.all(5.0),
+            margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
               child: Stack(
                 children: <Widget>[
                   Image.network(item, fit: BoxFit.cover, width: 1000.0),
@@ -323,7 +323,7 @@ final List<Widget> imageSliders = imgList
                     left: 0.0,
                     right: 0.0,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
                             Color.fromARGB(200, 0, 0, 0),
