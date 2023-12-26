@@ -4,8 +4,7 @@ import 'package:turf_tender/presentation/nav/nav.dart';
 import 'package:turf_tender/presentation/owner_register_page/owner_register.dart';
 import 'package:turf_tender/presentation/turf_details/turf_details.dart';
 import 'package:turf_tender/presentation/user_home/user_home.dart';
-
-import 'package:turf_tender/presentation/user_register_page/user_register.dart';
+import 'package:turf_tender/presentation/user_register_page/bloc/user_register_bloc.dart';
 
 part 'app_router.gr.dart';
 

@@ -28,16 +28,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 10, top: 25).r,
-                  child: Container(
-                    height: 23.h,
-                    width: 100.w,
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        color: Color(0xFF3792C4),
-                        fontSize: 19.sp,
-                        fontFamily: 'Fira Sans Condensed',
-                        fontWeight: FontWeight.w500,
+                  child: InkWell(
+                    onTap: () {
+                      context.router.pushNamed('/userregister');
+                    },
+                    child: Container(
+                      height: 23.h,
+                      width: 100.w,
+                      child: Text(
+                        'REGISTER',
+                        style: TextStyle(
+                          color: const Color(0xFF3792C4),
+                          fontSize: 19.sp,
+                          fontFamily: 'Fira Sans Condensed',
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
@@ -50,7 +55,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Container(
                   height: 350.h,
                   width: 350.w,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                       image: DecorationImage(
                     image: AssetImage('images/turf wall.jpeg'),
                     fit: BoxFit.fill,
@@ -148,7 +153,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10).w),
-                        backgroundColor: Color(0xFF3792C4),
+                        backgroundColor: const Color(0xFF3792C4),
                         foregroundColor: Colors.white),
                     onPressed: () {
                       _showPopup();
@@ -170,13 +175,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               children: [
                 SocialMediaContainer(
                     imagePath: 'images/facebook-f.png',
-                    backgroundColor: Color(0xFF005CB1),
+                    backgroundColor: const Color(0xFF005CB1),
                     onTap: () {
                       print('fb tapped');
                     }),
                 SocialMediaContainer(
                     imagePath: 'images/google.png',
-                    backgroundColor: Color(0xFFCF3045),
+                    backgroundColor: const Color(0xFFCF3045),
                     onTap: () {
                       print('Google tapped');
                     }),

@@ -42,7 +42,7 @@ abstract class _$AppRouter extends RootStackRouter {
     UserRegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const UserRegisterScreen(),
+        child: WrappedRoute(child: const UserRegisterScreen()),
       );
     },
     WelcomeRoute.name: (routeData) {
