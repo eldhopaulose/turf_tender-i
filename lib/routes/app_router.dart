@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:turf_tender/presentation/Welcome_page/welcome_page.dart';
+import 'package:turf_tender/presentation/nav/nav.dart';
 import 'package:turf_tender/presentation/owner_register_page/owner_register.dart';
 import 'package:turf_tender/presentation/turf_details/turf_details.dart';
 import 'package:turf_tender/presentation/user_home/user_home.dart';
@@ -33,6 +34,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           path: '/home',
           page: UserHomeRoute.page,
+        ),
+        AutoRoute(
+          path: '/nav',
+          page: NavRoute.page,
         ),
       ];
 }

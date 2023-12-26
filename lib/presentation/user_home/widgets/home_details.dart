@@ -44,95 +44,97 @@ class HomeDetails extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              Column(
-                children: [
-                  const SizedBox(height: 10),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 15,
+              Expanded(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Text(
+                          turf,
+                          style: const TextStyle(
+                            color: Color(0xFF353535),
+                            fontSize: 17,
+                            fontFamily: 'Fira Sans Extra Condensed',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(width: 3.w),
+                        Expanded(child: Icon(CupertinoIcons.heart_fill))
+                      ],
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 148,
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'images/map-pin-5-line 1.png',
+                            width: 18.w,
+                            height: 18.h,
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            adress,
+                            style: TextStyle(
+                              color: Color(0xFF3792C4),
+                              fontSize: 10,
+                              fontFamily: 'Fira Sans',
+                              fontWeight: FontWeight.w300,
+                              height: 0,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        turf,
-                        style: const TextStyle(
-                          color: Color(0xFF353535),
-                          fontSize: 17,
-                          fontFamily: 'Fira Sans Extra Condensed',
+                    ),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 148,
+                      height: 41,
+                      child: Text(
+                        discrption,
+                        style: TextStyle(
+                          color: Color(0xFF757575),
+                          fontSize: 11,
+                          fontFamily: 'Fira Sans',
                           fontWeight: FontWeight.w400,
                           height: 0,
                         ),
                       ),
-                      SizedBox(width: 10),
-                      Icon(CupertinoIcons.heart_fill)
-                    ],
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 148,
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'images/map-pin-5-line 1.png',
-                          width: 18.w,
-                          height: 18.h,
-                        ),
-                        const SizedBox(width: 10),
-                        Text(
-                          adress,
-                          style: TextStyle(
-                            color: Color(0xFF3792C4),
-                            fontSize: 10,
-                            fontFamily: 'Fira Sans',
-                            fontWeight: FontWeight.w300,
-                            height: 0,
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 148,
-                    height: 41,
-                    child: Text(
-                      discrption,
-                      style: TextStyle(
-                        color: Color(0xFF757575),
-                        fontSize: 11,
-                        fontFamily: 'Fira Sans',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: 155,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: Image.network(
+                              'https://ik.imagekit.io/wdjnrplts/Icons/time-line%201_hdAXHO5yL.png?updatedAt=1703532833559',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Text(
+                            time,
+                            style: TextStyle(
+                              color: Color(0xFF00A040),
+                              fontSize: 11,
+                              fontFamily: 'Fira Sans',
+                              fontWeight: FontWeight.w400,
+                              height: 0,
+                            ),
+                          )
+                        ],
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                    width: 155,
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: Image.network(
-                            'https://ik.imagekit.io/wdjnrplts/Icons/time-line%201_hdAXHO5yL.png?updatedAt=1703532833559',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Text(
-                          time,
-                          style: TextStyle(
-                            color: Color(0xFF00A040),
-                            fontSize: 11,
-                            fontFamily: 'Fira Sans',
-                            fontWeight: FontWeight.w400,
-                            height: 0,
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
