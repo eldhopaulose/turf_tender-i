@@ -648,7 +648,7 @@ mixin _$UserRegisterState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -658,7 +658,7 @@ mixin _$UserRegisterState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -668,7 +668,7 @@ mixin _$UserRegisterState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
@@ -767,7 +767,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -780,7 +780,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -793,7 +793,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
@@ -894,7 +894,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -907,7 +907,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -920,7 +920,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
@@ -986,6 +986,8 @@ abstract class _$$UserRegisterSuccessImplCopyWith<$Res> {
   factory _$$UserRegisterSuccessImplCopyWith(_$UserRegisterSuccessImpl value,
           $Res Function(_$UserRegisterSuccessImpl) then) =
       __$$UserRegisterSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserSignUpRes response});
 }
 
 /// @nodoc
@@ -995,39 +997,64 @@ class __$$UserRegisterSuccessImplCopyWithImpl<$Res>
   __$$UserRegisterSuccessImplCopyWithImpl(_$UserRegisterSuccessImpl _value,
       $Res Function(_$UserRegisterSuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? response = null,
+  }) {
+    return _then(_$UserRegisterSuccessImpl(
+      response: null == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as UserSignUpRes,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
-  const _$UserRegisterSuccessImpl();
+  const _$UserRegisterSuccessImpl({required this.response});
+
+  @override
+  final UserSignUpRes response;
 
   @override
   String toString() {
-    return 'UserRegisterState.userRegisterSuccess()';
+    return 'UserRegisterState.userRegisterSuccess(response: $response)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserRegisterSuccessImpl);
+            other is _$UserRegisterSuccessImpl &&
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, response);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserRegisterSuccessImplCopyWith<_$UserRegisterSuccessImpl> get copyWith =>
+      __$$UserRegisterSuccessImplCopyWithImpl<_$UserRegisterSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
   }) {
-    return userRegisterSuccess();
+    return userRegisterSuccess(response);
   }
 
   @override
@@ -1035,12 +1062,12 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
   }) {
-    return userRegisterSuccess?.call();
+    return userRegisterSuccess?.call(response);
   }
 
   @override
@@ -1048,14 +1075,14 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     required TResult orElse(),
   }) {
     if (userRegisterSuccess != null) {
-      return userRegisterSuccess();
+      return userRegisterSuccess(response);
     }
     return orElse();
   }
@@ -1106,7 +1133,13 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
 }
 
 abstract class _UserRegisterSuccess implements UserRegisterState {
-  const factory _UserRegisterSuccess() = _$UserRegisterSuccessImpl;
+  const factory _UserRegisterSuccess({required final UserSignUpRes response}) =
+      _$UserRegisterSuccessImpl;
+
+  UserSignUpRes get response;
+  @JsonKey(ignore: true)
+  _$$UserRegisterSuccessImplCopyWith<_$UserRegisterSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1176,7 +1209,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -1189,7 +1222,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -1202,7 +1235,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
@@ -1312,7 +1345,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -1325,7 +1358,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -1338,7 +1371,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
@@ -1466,7 +1499,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() userRegisterSuccess,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
@@ -1479,7 +1512,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? userRegisterSuccess,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
@@ -1492,7 +1525,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? userRegisterSuccess,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,

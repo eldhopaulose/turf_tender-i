@@ -29,17 +29,17 @@ class DioClient {
       switch (endPoints.type()) {
         case ReqType.GET:
           response = await _dio.get(
-            "$baseUrl/${endPoints.path()}",
+            "$baseUrl${endPoints.path()}",
             queryParameters: data,
           );
         case ReqType.POST:
           response = await _dio.post(
-            "$baseUrl/${endPoints.path()}",
+            "$baseUrl${endPoints.path()}",
             data: data,
           );
         case ReqType.PUT:
           response = await _dio.post(
-            "$baseUrl/${endPoints.path()}",
+            "$baseUrl${endPoints.path()}",
             data: data,
           );
       }

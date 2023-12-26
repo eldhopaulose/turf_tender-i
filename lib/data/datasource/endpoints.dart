@@ -9,9 +9,9 @@ extension EndPointsData on EndPoints {
       case EndPoints.login:
         path = "";
       case EndPoints.userSIgnup:
-        path = "/api/users/signup";
+        path = "/users/signup";
       case EndPoints.userOtp:
-        path = "/api/users/signup/otp";
+        path = "/users/signup/otp";
     }
     return path;
   }

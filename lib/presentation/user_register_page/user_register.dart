@@ -1,4 +1,4 @@
-part of './bloc/user_register_bloc.dart';
+part of 'package:turf_tender/presentation/user_register_page/bloc/user_register_bloc.dart';
 
 @RoutePage()
 class UserRegisterScreen extends StatefulWidget implements AutoRouteWrapper {
@@ -279,8 +279,9 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
     } else {
       progressDialog.close();
       if (state is _UserRegisterSuccess) {
-        ScaffoldMessenger.of(ctx)
-            .showSnackBar(SnackBar(content: Text("sucess")));
+        ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
+            content: Text(state.response.user?.toString() ??
+                state.response.error.toString())));
       } else if (state is _UserRegisterFail) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(state.error)));

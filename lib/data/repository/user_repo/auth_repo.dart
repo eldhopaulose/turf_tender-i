@@ -7,7 +7,7 @@ import 'package:turf_tender/domain/entities/response/user_signup_res_model.dart'
 
 class AuthRepo {
   final DioClient dioClient = DioClient(Dio());
-  Future<UserSignUpRes?> signupOtpRepo(UserSignUp userSignUp) async {
+  Future<UserSignUpRes?> signupRepo(UserSignUp userSignUp) async {
     try {
       final respoonse = await dioClient.mainReqRes(
         endPoints: EndPoints.userSIgnup,
@@ -24,7 +24,7 @@ class AuthRepo {
       } else {
         final signupRespose = UserSignUpRes.fromJson(respoonse.data);
         if (respoonse.statusCode == 400) {
-          if (signupRespose.user != null) {
+          if (signupRespose.error != null) {
             return signupRespose;
           } else {
             return UserSignUpRes(error: "Some thing is problem?");
@@ -40,7 +40,7 @@ class AuthRepo {
     return UserSignUpRes(error: "Some thing is problem?");
   }
 
-  Future<OtpUserRes?> signupRepo(UserSignUp userSignUp) async {
+  Future<OtpUserRes?> signupOtpRepo(UserSignUp userSignUp) async {
     try {
       final respoonse = await dioClient.mainReqRes(
         endPoints: EndPoints.userOtp,
