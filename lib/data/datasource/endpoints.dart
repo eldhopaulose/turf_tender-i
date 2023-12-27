@@ -1,6 +1,6 @@
 import 'package:turf_tender/data/datasource/dio_client.dart';
 
-enum EndPoints { login, userSIgnup, userOtp }
+enum EndPoints { login, userSIgnup, userSIgnupOtp }
 
 extension EndPointsData on EndPoints {
   String path() {
@@ -10,7 +10,7 @@ extension EndPointsData on EndPoints {
         path = "";
       case EndPoints.userSIgnup:
         path = "/users/signup";
-      case EndPoints.userOtp:
+      case EndPoints.userSIgnupOtp:
         path = "/users/signup/otp";
     }
     return path;
@@ -23,7 +23,7 @@ extension EndPointsData on EndPoints {
         type = ReqType.POST;
       case EndPoints.userSIgnup:
         type = ReqType.POST;
-      case EndPoints.userOtp:
+      case EndPoints.userSIgnupOtp:
         type = ReqType.POST;
     }
     return type;
@@ -36,7 +36,7 @@ extension EndPointsData on EndPoints {
         token = false;
       case EndPoints.userSIgnup:
         token = false;
-      case EndPoints.userOtp:
+      case EndPoints.userSIgnupOtp:
         token = false;
     }
     return token;

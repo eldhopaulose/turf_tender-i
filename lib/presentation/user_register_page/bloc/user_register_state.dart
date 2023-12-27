@@ -8,8 +8,8 @@ class UserRegisterState with _$UserRegisterState {
       {required UserSignUpRes response}) = _UserRegisterSuccess;
   const factory UserRegisterState.userRegisterFail({required String error}) =
       _UserRegisterFail;
-  const factory UserRegisterState.userRegisterOtpSuccess() =
-      _UserRegisterOtpSuccess;
+  const factory UserRegisterState.userRegisterOtpSuccess(
+      {required OtpUserRes response}) = _UserRegisterOtpSuccess;
   const factory UserRegisterState.userRegisterOtpFail({required String error}) =
       _UserRegisterOtpFail;
   const factory UserRegisterState.shouldShowOtp({required bool otp}) =

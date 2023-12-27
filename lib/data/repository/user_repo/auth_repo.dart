@@ -43,7 +43,7 @@ class AuthRepo {
   Future<OtpUserRes?> signupOtpRepo(UserSignUp userSignUp) async {
     try {
       final respoonse = await dioClient.mainReqRes(
-        endPoints: EndPoints.userOtp,
+        endPoints: EndPoints.userSIgnupOtp,
         data: userSignUp.toJson(),
       );
       print(respoonse);
@@ -57,7 +57,7 @@ class AuthRepo {
       } else {
         final signupRespose = OtpUserRes.fromJson(respoonse.data);
         if (respoonse.statusCode == 400) {
-          if (signupRespose.userOtp != null) {
+          if (signupRespose.error != null) {
             return signupRespose;
           } else {
             return OtpUserRes(error: "Some thing is problem?");

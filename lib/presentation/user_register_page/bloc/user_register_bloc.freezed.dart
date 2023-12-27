@@ -800,7 +800,7 @@ mixin _$UserRegisterState {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) =>
@@ -811,7 +811,7 @@ mixin _$UserRegisterState {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) =>
@@ -822,7 +822,7 @@ mixin _$UserRegisterState {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -925,7 +925,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -939,7 +939,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -953,7 +953,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -1058,7 +1058,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -1072,7 +1072,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -1086,7 +1086,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -1219,7 +1219,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -1233,7 +1233,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -1247,7 +1247,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -1385,7 +1385,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -1399,7 +1399,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -1413,7 +1413,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -1488,6 +1488,8 @@ abstract class _$$UserRegisterOtpSuccessImplCopyWith<$Res> {
           _$UserRegisterOtpSuccessImpl value,
           $Res Function(_$UserRegisterOtpSuccessImpl) then) =
       __$$UserRegisterOtpSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({OtpUserRes response});
 }
 
 /// @nodoc
@@ -1498,27 +1500,52 @@ class __$$UserRegisterOtpSuccessImplCopyWithImpl<$Res>
       _$UserRegisterOtpSuccessImpl _value,
       $Res Function(_$UserRegisterOtpSuccessImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? response = null,
+  }) {
+    return _then(_$UserRegisterOtpSuccessImpl(
+      response: null == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as OtpUserRes,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
-  const _$UserRegisterOtpSuccessImpl();
+  const _$UserRegisterOtpSuccessImpl({required this.response});
+
+  @override
+  final OtpUserRes response;
 
   @override
   String toString() {
-    return 'UserRegisterState.userRegisterOtpSuccess()';
+    return 'UserRegisterState.userRegisterOtpSuccess(response: $response)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserRegisterOtpSuccessImpl);
+            other is _$UserRegisterOtpSuccessImpl &&
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, response);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserRegisterOtpSuccessImplCopyWith<_$UserRegisterOtpSuccessImpl>
+      get copyWith => __$$UserRegisterOtpSuccessImplCopyWithImpl<
+          _$UserRegisterOtpSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1527,11 +1554,11 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
-    return userRegisterOtpSuccess();
+    return userRegisterOtpSuccess(response);
   }
 
   @override
@@ -1541,11 +1568,11 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
-    return userRegisterOtpSuccess?.call();
+    return userRegisterOtpSuccess?.call(response);
   }
 
   @override
@@ -1555,13 +1582,13 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterOtpSuccess != null) {
-      return userRegisterOtpSuccess();
+      return userRegisterOtpSuccess(response);
     }
     return orElse();
   }
@@ -1615,7 +1642,13 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
 }
 
 abstract class _UserRegisterOtpSuccess implements UserRegisterState {
-  const factory _UserRegisterOtpSuccess() = _$UserRegisterOtpSuccessImpl;
+  const factory _UserRegisterOtpSuccess({required final OtpUserRes response}) =
+      _$UserRegisterOtpSuccessImpl;
+
+  OtpUserRes get response;
+  @JsonKey(ignore: true)
+  _$$UserRegisterOtpSuccessImplCopyWith<_$UserRegisterOtpSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1687,7 +1720,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -1701,7 +1734,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -1715,7 +1748,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
@@ -1852,7 +1885,7 @@ class _$ShouldShowOtpImpl implements _ShouldShowOtp {
     required TResult Function() loading,
     required TResult Function(UserSignUpRes response) userRegisterSuccess,
     required TResult Function(String error) userRegisterFail,
-    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(OtpUserRes response) userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
     required TResult Function(bool otp) shouldShowOtp,
   }) {
@@ -1866,7 +1899,7 @@ class _$ShouldShowOtpImpl implements _ShouldShowOtp {
     TResult? Function()? loading,
     TResult? Function(UserSignUpRes response)? userRegisterSuccess,
     TResult? Function(String error)? userRegisterFail,
-    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
     TResult? Function(bool otp)? shouldShowOtp,
   }) {
@@ -1880,7 +1913,7 @@ class _$ShouldShowOtpImpl implements _ShouldShowOtp {
     TResult Function()? loading,
     TResult Function(UserSignUpRes response)? userRegisterSuccess,
     TResult Function(String error)? userRegisterFail,
-    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(OtpUserRes response)? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
     TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),

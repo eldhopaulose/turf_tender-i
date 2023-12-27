@@ -9,14 +9,17 @@ import 'package:provider/provider.dart';
 import 'package:sn_progress_dialog/progress_dialog.dart';
 import 'package:turf_tender/data/repository/user_repo/auth_repo.dart';
 import 'package:turf_tender/domain/entities/request/user_signup_model.dart';
+import 'package:turf_tender/domain/entities/response/otp_user_res.dart';
 import 'package:turf_tender/domain/entities/response/user_signup_res_model.dart';
-import 'package:turf_tender/presentation/user_register_page/widgets/otp.dart';
+import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+
 import 'package:turf_tender/presentation/user_register_page/widgets/user_owner_avatar.dart';
 
 part 'user_register_event.dart';
 part 'user_register_state.dart';
 part 'user_register_bloc.freezed.dart';
 part '../user_register.dart';
+part '../widgets/otp.dart';
 
 class UserRegisterBloc extends Bloc<UserRegisterEvent, UserRegisterState> {
   UserRegisterBloc() : super(const _Initial()) {
@@ -44,7 +47,7 @@ class UserRegisterBloc extends Bloc<UserRegisterEvent, UserRegisterState> {
       (event, emit) async {
         emit(const _Loading());
         AuthRepo authRepo = AuthRepo();
-        final response = await authRepo.signupRepo(
+        final response = await authRepo.signupOtpRepo(
           UserSignUp(
             name: event.name,
             password: event.password,
@@ -55,9 +58,8 @@ class UserRegisterBloc extends Bloc<UserRegisterEvent, UserRegisterState> {
           ),
         );
 
-        if (response != null && response.error != null) {
-          emit(const _UserRegisterOtpSuccess());
-          emit(const _ShouldShowOtp(otp: true));
+        if (response != null && response.error == null) {
+          emit(_UserRegisterOtpSuccess(response: response));
         } else {
           emit(_UserRegisterOtpFail(error: response?.error ?? "unknown error"));
         }

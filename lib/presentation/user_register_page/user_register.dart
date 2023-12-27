@@ -40,84 +40,66 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print("otpppppppp");
     bool shouldShowOtp = false;
+    bool isOtpNotVerified = true;
+    String? otpVlaue;
     print(shouldShowOtp);
     return Scaffold(
       body: SingleChildScrollView(
         child: BlocListener<UserRegisterBloc, UserRegisterState>(
           listener: _registerListener,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25, top: 30).r,
-                    child: Container(
-                      height: 40.h,
-                      width: 150.w,
-                      child: Text(
-                        'REGISTER',
-                        style: TextStyle(
-                          color: const Color.fromRGBO(0, 0, 0, 1),
-                          fontSize: 25.sp,
-                          fontFamily: 'Fira Sans Extra Condensed',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
+              Text(
+                'REGISTER',
+                style: TextStyle(
+                  color: const Color.fromRGBO(0, 0, 0, 1),
+                  fontSize: 25.sp,
+                  fontFamily: 'Fira Sans Extra Condensed',
+                  fontWeight: FontWeight.w500,
+                ),
               ),
               SizedBox(height: 10.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25).r,
-                    child: Container(
-                        height: 17.h,
-                        width: 150.w,
-                        child: Text(
-                          'Choose Avatar',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.sp,
-                            fontFamily: 'Fira Sans Condensed',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )),
-                  ),
-                ],
+              Text(
+                'Choose Avatar',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.sp,
+                  fontFamily: 'Fira Sans Condensed',
+                  fontWeight: FontWeight.w400,
+                ),
               ),
               SizedBox(height: 24.h),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15).w,
-                      child: UserOwnerAvathar(
-                        imagePath: 'images/boy1 1.png',
+              SizedBox(
+                height: 90,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15).w,
+                        child: UserOwnerAvathar(
+                          imagePath: 'images/boy1 1.png',
+                        ),
                       ),
-                    ),
-                    UserOwnerAvathar(
-                      imagePath: 'images/girl1 1.png',
-                    ),
-                    UserOwnerAvathar(
-                      imagePath: 'images/boy2 1.png',
-                    ),
-                    UserOwnerAvathar(
-                      imagePath: 'images/girl2 1.png',
-                    ),
-                    UserOwnerAvathar(
-                      imagePath: 'images/avathar2.png',
-                    ),
-                    UserOwnerAvathar(
-                      imagePath: 'images/avathar1.png',
-                    ),
-                  ],
+                      UserOwnerAvathar(
+                        imagePath: 'images/girl1 1.png',
+                      ),
+                      UserOwnerAvathar(
+                        imagePath: 'images/boy2 1.png',
+                      ),
+                      UserOwnerAvathar(
+                        imagePath: 'images/girl2 1.png',
+                      ),
+                      UserOwnerAvathar(
+                        imagePath: 'images/avathar2.png',
+                      ),
+                      UserOwnerAvathar(
+                        imagePath: 'images/avathar1.png',
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(height: 25.h),
@@ -246,45 +228,127 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                     children: [
                       Visibility(
                         visible: shouldShowOtp,
-                        child: Otp(),
+                        child: Column(
+                          children: [
+                            const Text(
+                              'OTP VERIFICATION',
+                              style: TextStyle(
+                                color: Color(0xFF020202),
+                                fontSize: 25,
+                                fontFamily: 'Fira Sans Extra Condensed',
+                                fontWeight: FontWeight.w500,
+                                height: 0,
+                              ),
+                            ),
+                            OtpScreen(
+                              name: _nameController.text,
+                              mobileNumber: _mobileNumberController.text,
+                              userName: _emailController.text,
+                              password: _passwordController.text,
+                              avatar: "eff",
+                              onOtpEntered: (String otp) {
+                                isOtpNotVerified = true;
+                                otpVlaue = otp;
+
+                                print("otpppppppppppp");
+                                print(otpVlaue);
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(height: 20.h),
                     ],
                   );
                 },
               ),
-              SizedBox(
-                height: 59.h,
-                width: 356.w,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 18).r,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10).w),
-                          backgroundColor: const Color(0xFF3792C4),
-                          foregroundColor: Colors.white),
-                      onPressed: () {
-                        context.read<UserRegisterBloc>().add(
-                              _OnRegisterCliked(
-                                name: _nameController.text,
-                                mobileNumber: _mobileNumberController.text,
-                                userName: _emailController.text,
-                                password: _passwordController.text,
-                                avatar: " skd ks d",
-                              ),
-                            );
-                      },
-                      child: Text(
-                        'SEND OTP',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.sp,
-                          fontFamily: 'Fira Sans Condensed',
-                          fontWeight: FontWeight.w600,
+              BlocBuilder<UserRegisterBloc, UserRegisterState>(
+                builder: (context, state) {
+                  bool shouldShowOtp = showOtp(context, state);
+                  print(shouldShowOtp);
+                  return Visibility(
+                    visible: !shouldShowOtp,
+                    child: SizedBox(
+                      height: 59.h,
+                      width: 356.w,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 16, right: 18).r,
+                        child: ElevatedButton(
+                          child: Text(
+                            'SEND OTP',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.sp,
+                              fontFamily: 'Fira Sans Condensed',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10).w),
+                              backgroundColor: const Color(0xFF3792C4),
+                              foregroundColor: Colors.white),
+                          onPressed: () {
+                            context.read<UserRegisterBloc>().add(
+                                  _OnRegisterCliked(
+                                    name: _nameController.text,
+                                    mobileNumber: _mobileNumberController.text,
+                                    userName: _emailController.text,
+                                    password: _passwordController.text,
+                                    avatar: " skd ks d",
+                                  ),
+                                );
+                            // setState(() {
+                            //   shouldShowOtp = true;
+                            // });
+                          },
                         ),
-                      )),
-                ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+              BlocBuilder<UserRegisterBloc, UserRegisterState>(
+                builder: (context, state) {
+                  bool shouldShowOtp = showOtp(context, state);
+                  print(shouldShowOtp);
+                  return Visibility(
+                    visible: shouldShowOtp,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10).w),
+                            backgroundColor: const Color(0xFF3792C4),
+                            foregroundColor: Colors.white),
+                        onPressed: () {
+                          if (otpVlaue != null) {
+                            context.read<UserRegisterBloc>().add(
+                                  _OnRegisterOtpCliked(
+                                    name: _nameController.text,
+                                    mobileNumber: _mobileNumberController.text,
+                                    userName: _emailController.text,
+                                    password: _passwordController.text,
+                                    avatar: " skd ks d",
+                                    otp: otpVlaue ?? "",
+                                  ),
+                                );
+                            print("otpvalue");
+                            print(otpVlaue);
+                          } else {
+                            print("OTP not entered");
+                          }
+                        },
+                        child: Text(
+                          'Register',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.sp,
+                            fontFamily: 'Fira Sans Condensed',
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )),
+                  );
+                },
               ),
               SizedBox(height: 20.h),
             ],
@@ -302,23 +366,42 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
   }
 
   _registerListener(BuildContext ctx, UserRegisterState state) {
+    print("Current state: $state");
+
     if (state is _Loading) {
-      progressDialog.show(msg: "SIgnup");
-    } else {
+      print("Loading state triggered");
+      progressDialog.show(msg: "Signup");
+    } else if (state is _UserRegisterSuccess) {
+      print("UserRegisterSuccess state triggered");
       progressDialog.close();
-      if (state is _UserRegisterSuccess) {
-        ScaffoldMessenger.of(ctx).showSnackBar(
-          SnackBar(
-            content: Text(
-              state.response.user?.toString() ??
-                  state.response.error.toString(),
-            ),
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(
+            state.response.user?.toString() ?? state.response.error.toString(),
           ),
-        );
-      } else if (state is _UserRegisterFail) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(state.error)));
-      }
+        ),
+      );
+    } else if (state is _UserRegisterOtpSuccess) {
+      print("UserRegisterOtpSuccess state triggered");
+      progressDialog.close();
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(state.response.userOtp?.toString() ??
+              state.response.error.toString()),
+        ),
+      );
+    } else if (state is _UserRegisterFail) {
+      print("UserRegisterFail state triggered");
+      progressDialog.close();
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(content: Text(state.error)),
+      );
+    } else if (state is _UserRegisterOtpFail) {
+      print("UserRegisterFail state triggered");
+      progressDialog.close();
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        SnackBar(content: Text(state.error)),
+      );
     }
   }
 
