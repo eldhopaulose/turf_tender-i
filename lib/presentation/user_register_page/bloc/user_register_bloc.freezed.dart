@@ -25,6 +25,7 @@ mixin _$UserRegisterEvent {
     required TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)
         onRegisterOtpCliked,
+    required TResult Function() onClikedOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +37,7 @@ mixin _$UserRegisterEvent {
     TResult? Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult? Function()? onClikedOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +49,7 @@ mixin _$UserRegisterEvent {
     TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult Function()? onClikedOtp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$UserRegisterEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_OnRegisterCliked value) onRegisterCliked,
     required TResult Function(_OnRegisterOtpCliked value) onRegisterOtpCliked,
+    required TResult Function(_OnClikedOtp value) onClikedOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$UserRegisterEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult? Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult? Function(_OnClikedOtp value)? onClikedOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$UserRegisterEvent {
     TResult Function(_Started value)? started,
     TResult Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult Function(_OnClikedOtp value)? onClikedOtp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +143,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)
         onRegisterOtpCliked,
+    required TResult Function() onClikedOtp,
   }) {
     return started();
   }
@@ -151,6 +158,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult? Function()? onClikedOtp,
   }) {
     return started?.call();
   }
@@ -165,6 +173,7 @@ class _$StartedImpl implements _Started {
     TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult Function()? onClikedOtp,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -179,6 +188,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_OnRegisterCliked value) onRegisterCliked,
     required TResult Function(_OnRegisterOtpCliked value) onRegisterOtpCliked,
+    required TResult Function(_OnClikedOtp value) onClikedOtp,
   }) {
     return started(this);
   }
@@ -189,6 +199,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult? Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult? Function(_OnClikedOtp value)? onClikedOtp,
   }) {
     return started?.call(this);
   }
@@ -199,6 +210,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult Function(_OnClikedOtp value)? onClikedOtp,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -330,6 +342,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     required TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)
         onRegisterOtpCliked,
+    required TResult Function() onClikedOtp,
   }) {
     return onRegisterCliked(name, mobileNumber, userName, password, avatar);
   }
@@ -344,6 +357,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     TResult? Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult? Function()? onClikedOtp,
   }) {
     return onRegisterCliked?.call(
         name, mobileNumber, userName, password, avatar);
@@ -359,6 +373,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult Function()? onClikedOtp,
     required TResult orElse(),
   }) {
     if (onRegisterCliked != null) {
@@ -373,6 +388,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     required TResult Function(_Started value) started,
     required TResult Function(_OnRegisterCliked value) onRegisterCliked,
     required TResult Function(_OnRegisterOtpCliked value) onRegisterOtpCliked,
+    required TResult Function(_OnClikedOtp value) onClikedOtp,
   }) {
     return onRegisterCliked(this);
   }
@@ -383,6 +399,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult? Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult? Function(_OnClikedOtp value)? onClikedOtp,
   }) {
     return onRegisterCliked?.call(this);
   }
@@ -393,6 +410,7 @@ class _$OnRegisterClikedImpl implements _OnRegisterCliked {
     TResult Function(_Started value)? started,
     TResult Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult Function(_OnClikedOtp value)? onClikedOtp,
     required TResult orElse(),
   }) {
     if (onRegisterCliked != null) {
@@ -548,6 +566,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     required TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)
         onRegisterOtpCliked,
+    required TResult Function() onClikedOtp,
   }) {
     return onRegisterOtpCliked(
         name, mobileNumber, userName, password, avatar, otp);
@@ -563,6 +582,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     TResult? Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult? Function()? onClikedOtp,
   }) {
     return onRegisterOtpCliked?.call(
         name, mobileNumber, userName, password, avatar, otp);
@@ -578,6 +598,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     TResult Function(String name, String mobileNumber, String userName,
             String password, String avatar, String otp)?
         onRegisterOtpCliked,
+    TResult Function()? onClikedOtp,
     required TResult orElse(),
   }) {
     if (onRegisterOtpCliked != null) {
@@ -593,6 +614,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     required TResult Function(_Started value) started,
     required TResult Function(_OnRegisterCliked value) onRegisterCliked,
     required TResult Function(_OnRegisterOtpCliked value) onRegisterOtpCliked,
+    required TResult Function(_OnClikedOtp value) onClikedOtp,
   }) {
     return onRegisterOtpCliked(this);
   }
@@ -603,6 +625,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     TResult? Function(_Started value)? started,
     TResult? Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult? Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult? Function(_OnClikedOtp value)? onClikedOtp,
   }) {
     return onRegisterOtpCliked?.call(this);
   }
@@ -613,6 +636,7 @@ class _$OnRegisterOtpClikedImpl implements _OnRegisterOtpCliked {
     TResult Function(_Started value)? started,
     TResult Function(_OnRegisterCliked value)? onRegisterCliked,
     TResult Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult Function(_OnClikedOtp value)? onClikedOtp,
     required TResult orElse(),
   }) {
     if (onRegisterOtpCliked != null) {
@@ -643,6 +667,132 @@ abstract class _OnRegisterOtpCliked implements UserRegisterEvent {
 }
 
 /// @nodoc
+abstract class _$$OnClikedOtpImplCopyWith<$Res> {
+  factory _$$OnClikedOtpImplCopyWith(
+          _$OnClikedOtpImpl value, $Res Function(_$OnClikedOtpImpl) then) =
+      __$$OnClikedOtpImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnClikedOtpImplCopyWithImpl<$Res>
+    extends _$UserRegisterEventCopyWithImpl<$Res, _$OnClikedOtpImpl>
+    implements _$$OnClikedOtpImplCopyWith<$Res> {
+  __$$OnClikedOtpImplCopyWithImpl(
+      _$OnClikedOtpImpl _value, $Res Function(_$OnClikedOtpImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnClikedOtpImpl implements _OnClikedOtp {
+  const _$OnClikedOtpImpl();
+
+  @override
+  String toString() {
+    return 'UserRegisterEvent.onClikedOtp()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OnClikedOtpImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(String name, String mobileNumber, String userName,
+            String password, String avatar)
+        onRegisterCliked,
+    required TResult Function(String name, String mobileNumber, String userName,
+            String password, String avatar, String otp)
+        onRegisterOtpCliked,
+    required TResult Function() onClikedOtp,
+  }) {
+    return onClikedOtp();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(String name, String mobileNumber, String userName,
+            String password, String avatar)?
+        onRegisterCliked,
+    TResult? Function(String name, String mobileNumber, String userName,
+            String password, String avatar, String otp)?
+        onRegisterOtpCliked,
+    TResult? Function()? onClikedOtp,
+  }) {
+    return onClikedOtp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(String name, String mobileNumber, String userName,
+            String password, String avatar)?
+        onRegisterCliked,
+    TResult Function(String name, String mobileNumber, String userName,
+            String password, String avatar, String otp)?
+        onRegisterOtpCliked,
+    TResult Function()? onClikedOtp,
+    required TResult orElse(),
+  }) {
+    if (onClikedOtp != null) {
+      return onClikedOtp();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnRegisterCliked value) onRegisterCliked,
+    required TResult Function(_OnRegisterOtpCliked value) onRegisterOtpCliked,
+    required TResult Function(_OnClikedOtp value) onClikedOtp,
+  }) {
+    return onClikedOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnRegisterCliked value)? onRegisterCliked,
+    TResult? Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult? Function(_OnClikedOtp value)? onClikedOtp,
+  }) {
+    return onClikedOtp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnRegisterCliked value)? onRegisterCliked,
+    TResult Function(_OnRegisterOtpCliked value)? onRegisterOtpCliked,
+    TResult Function(_OnClikedOtp value)? onClikedOtp,
+    required TResult orElse(),
+  }) {
+    if (onClikedOtp != null) {
+      return onClikedOtp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnClikedOtp implements UserRegisterEvent {
+  const factory _OnClikedOtp() = _$OnClikedOtpImpl;
+}
+
+/// @nodoc
 mixin _$UserRegisterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -652,6 +802,7 @@ mixin _$UserRegisterState {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -662,6 +813,7 @@ mixin _$UserRegisterState {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -672,6 +824,7 @@ mixin _$UserRegisterState {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -684,6 +837,7 @@ mixin _$UserRegisterState {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -694,6 +848,7 @@ mixin _$UserRegisterState {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -704,6 +859,7 @@ mixin _$UserRegisterState {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -771,6 +927,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return initial();
   }
@@ -784,6 +941,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return initial?.call();
   }
@@ -797,6 +955,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -815,6 +974,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return initial(this);
   }
@@ -828,6 +988,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return initial?.call(this);
   }
@@ -841,6 +1002,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -898,6 +1060,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return loading();
   }
@@ -911,6 +1074,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return loading?.call();
   }
@@ -924,6 +1088,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -942,6 +1107,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return loading(this);
   }
@@ -955,6 +1121,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return loading?.call(this);
   }
@@ -968,6 +1135,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1053,6 +1221,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return userRegisterSuccess(response);
   }
@@ -1066,6 +1235,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return userRegisterSuccess?.call(response);
   }
@@ -1079,6 +1249,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterSuccess != null) {
@@ -1097,6 +1268,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return userRegisterSuccess(this);
   }
@@ -1110,6 +1282,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return userRegisterSuccess?.call(this);
   }
@@ -1123,6 +1296,7 @@ class _$UserRegisterSuccessImpl implements _UserRegisterSuccess {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterSuccess != null) {
@@ -1213,6 +1387,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return userRegisterFail(error);
   }
@@ -1226,6 +1401,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return userRegisterFail?.call(error);
   }
@@ -1239,6 +1415,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterFail != null) {
@@ -1257,6 +1434,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return userRegisterFail(this);
   }
@@ -1270,6 +1448,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return userRegisterFail?.call(this);
   }
@@ -1283,6 +1462,7 @@ class _$UserRegisterFailImpl implements _UserRegisterFail {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterFail != null) {
@@ -1349,6 +1529,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return userRegisterOtpSuccess();
   }
@@ -1362,6 +1543,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return userRegisterOtpSuccess?.call();
   }
@@ -1375,6 +1557,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterOtpSuccess != null) {
@@ -1393,6 +1576,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return userRegisterOtpSuccess(this);
   }
@@ -1406,6 +1590,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return userRegisterOtpSuccess?.call(this);
   }
@@ -1419,6 +1604,7 @@ class _$UserRegisterOtpSuccessImpl implements _UserRegisterOtpSuccess {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterOtpSuccess != null) {
@@ -1503,6 +1689,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     required TResult Function(String error) userRegisterFail,
     required TResult Function() userRegisterOtpSuccess,
     required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
   }) {
     return userRegisterOtpFail(error);
   }
@@ -1516,6 +1703,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult? Function(String error)? userRegisterFail,
     TResult? Function()? userRegisterOtpSuccess,
     TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
   }) {
     return userRegisterOtpFail?.call(error);
   }
@@ -1529,6 +1717,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult Function(String error)? userRegisterFail,
     TResult Function()? userRegisterOtpSuccess,
     TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterOtpFail != null) {
@@ -1547,6 +1736,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     required TResult Function(_UserRegisterOtpSuccess value)
         userRegisterOtpSuccess,
     required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
   }) {
     return userRegisterOtpFail(this);
   }
@@ -1560,6 +1750,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult? Function(_UserRegisterFail value)? userRegisterFail,
     TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
   }) {
     return userRegisterOtpFail?.call(this);
   }
@@ -1573,6 +1764,7 @@ class _$UserRegisterOtpFailImpl implements _UserRegisterOtpFail {
     TResult Function(_UserRegisterFail value)? userRegisterFail,
     TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
     TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
     required TResult orElse(),
   }) {
     if (userRegisterOtpFail != null) {
@@ -1589,5 +1781,169 @@ abstract class _UserRegisterOtpFail implements UserRegisterState {
   String get error;
   @JsonKey(ignore: true)
   _$$UserRegisterOtpFailImplCopyWith<_$UserRegisterOtpFailImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ShouldShowOtpImplCopyWith<$Res> {
+  factory _$$ShouldShowOtpImplCopyWith(
+          _$ShouldShowOtpImpl value, $Res Function(_$ShouldShowOtpImpl) then) =
+      __$$ShouldShowOtpImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool otp});
+}
+
+/// @nodoc
+class __$$ShouldShowOtpImplCopyWithImpl<$Res>
+    extends _$UserRegisterStateCopyWithImpl<$Res, _$ShouldShowOtpImpl>
+    implements _$$ShouldShowOtpImplCopyWith<$Res> {
+  __$$ShouldShowOtpImplCopyWithImpl(
+      _$ShouldShowOtpImpl _value, $Res Function(_$ShouldShowOtpImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? otp = null,
+  }) {
+    return _then(_$ShouldShowOtpImpl(
+      otp: null == otp
+          ? _value.otp
+          : otp // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ShouldShowOtpImpl implements _ShouldShowOtp {
+  const _$ShouldShowOtpImpl({required this.otp});
+
+  @override
+  final bool otp;
+
+  @override
+  String toString() {
+    return 'UserRegisterState.shouldShowOtp(otp: $otp)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ShouldShowOtpImpl &&
+            (identical(other.otp, otp) || other.otp == otp));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, otp);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ShouldShowOtpImplCopyWith<_$ShouldShowOtpImpl> get copyWith =>
+      __$$ShouldShowOtpImplCopyWithImpl<_$ShouldShowOtpImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(UserSignUpRes response) userRegisterSuccess,
+    required TResult Function(String error) userRegisterFail,
+    required TResult Function() userRegisterOtpSuccess,
+    required TResult Function(String error) userRegisterOtpFail,
+    required TResult Function(bool otp) shouldShowOtp,
+  }) {
+    return shouldShowOtp(otp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(UserSignUpRes response)? userRegisterSuccess,
+    TResult? Function(String error)? userRegisterFail,
+    TResult? Function()? userRegisterOtpSuccess,
+    TResult? Function(String error)? userRegisterOtpFail,
+    TResult? Function(bool otp)? shouldShowOtp,
+  }) {
+    return shouldShowOtp?.call(otp);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(UserSignUpRes response)? userRegisterSuccess,
+    TResult Function(String error)? userRegisterFail,
+    TResult Function()? userRegisterOtpSuccess,
+    TResult Function(String error)? userRegisterOtpFail,
+    TResult Function(bool otp)? shouldShowOtp,
+    required TResult orElse(),
+  }) {
+    if (shouldShowOtp != null) {
+      return shouldShowOtp(otp);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_UserRegisterSuccess value) userRegisterSuccess,
+    required TResult Function(_UserRegisterFail value) userRegisterFail,
+    required TResult Function(_UserRegisterOtpSuccess value)
+        userRegisterOtpSuccess,
+    required TResult Function(_UserRegisterOtpFail value) userRegisterOtpFail,
+    required TResult Function(_ShouldShowOtp value) shouldShowOtp,
+  }) {
+    return shouldShowOtp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_UserRegisterSuccess value)? userRegisterSuccess,
+    TResult? Function(_UserRegisterFail value)? userRegisterFail,
+    TResult? Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
+    TResult? Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult? Function(_ShouldShowOtp value)? shouldShowOtp,
+  }) {
+    return shouldShowOtp?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_UserRegisterSuccess value)? userRegisterSuccess,
+    TResult Function(_UserRegisterFail value)? userRegisterFail,
+    TResult Function(_UserRegisterOtpSuccess value)? userRegisterOtpSuccess,
+    TResult Function(_UserRegisterOtpFail value)? userRegisterOtpFail,
+    TResult Function(_ShouldShowOtp value)? shouldShowOtp,
+    required TResult orElse(),
+  }) {
+    if (shouldShowOtp != null) {
+      return shouldShowOtp(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShouldShowOtp implements UserRegisterState {
+  const factory _ShouldShowOtp({required final bool otp}) = _$ShouldShowOtpImpl;
+
+  bool get otp;
+  @JsonKey(ignore: true)
+  _$$ShouldShowOtpImplCopyWith<_$ShouldShowOtpImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

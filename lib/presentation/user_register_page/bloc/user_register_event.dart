@@ -18,4 +18,6 @@ class UserRegisterEvent with _$UserRegisterEvent {
     required String avatar,
     required String otp,
   }) = _OnRegisterOtpCliked;
+
+  const factory UserRegisterEvent.onClikedOtp() = _OnClikedOtp;
 }

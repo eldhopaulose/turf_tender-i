@@ -11,16 +11,16 @@ class DateContainer extends StatelessWidget {
       width: 110.w,
       height: 26.h,
       decoration: ShapeDecoration(
-        color: Color(0xFF3792C4),
+        color: const Color(0xFF3792C4),
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFF7F7F7)),
+          side: const BorderSide(width: 1, color: Color(0xFFF7F7F7)),
           borderRadius: BorderRadius.circular(6),
         ),
       ),
       child: Center(
         child: Text(
           date,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 10,
             fontFamily: 'Fira Sans',

@@ -109,11 +109,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z]")),
                   ],
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'Name',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -134,11 +134,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     FilteringTextInputFormatter.allow(RegExp(r"[0-9]")),
                   ],
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'Mobile number',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -159,11 +159,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z0-9@.]")),
                   ],
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'Email',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -181,11 +181,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     fontWeight: FontWeight.w400,
                   ),
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'Address',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -206,11 +206,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z]")),
                   ],
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'District',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -231,11 +231,11 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     FilteringTextInputFormatter.allow(RegExp(r"[0-9]")),
                   ],
                   decoration: InputDecoration(
-                      fillColor: Color(0xFFF2F2F2),
+                      fillColor: const Color(0xFFF2F2F2),
                       labelText: 'Pin Code',
                       border: OutlineInputBorder(
                           borderRadius:
-                              BorderRadius.all(Radius.circular(10).w))),
+                              BorderRadius.all(const Radius.circular(10).w))),
                 ),
               ),
             ),
@@ -285,12 +285,12 @@ class _OwnerRegisterScreenState extends State<OwnerRegisterScreen> {
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10).w),
-                        backgroundColor: Color(0xFF3792C4),
+                        backgroundColor: const Color(0xFF3792C4),
                         foregroundColor: Colors.white),
                     onPressed: () {
                       print('owner otp snd tapped');
                     },
-                    child: Text(
+                    child: const Text(
                       'SEND OTP',
                       style: TextStyle(
                         color: Colors.white,

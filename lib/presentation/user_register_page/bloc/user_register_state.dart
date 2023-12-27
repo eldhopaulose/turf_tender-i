@@ -12,4 +12,6 @@ class UserRegisterState with _$UserRegisterState {
       _UserRegisterOtpSuccess;
   const factory UserRegisterState.userRegisterOtpFail({required String error}) =
       _UserRegisterOtpFail;
+  const factory UserRegisterState.shouldShowOtp({required bool otp}) =
+      _ShouldShowOtp;
 }

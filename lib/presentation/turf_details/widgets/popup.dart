@@ -8,11 +8,11 @@ Future<void> dialogBuilder(BuildContext context) {
       return Container(
         width: 390.w,
         height: 230.h,
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Confirm Booking',
               style: TextStyle(
                 color: Colors.black,
@@ -23,7 +23,7 @@ Future<void> dialogBuilder(BuildContext context) {
               ),
             ),
             SizedBox(height: 10.h),
-            SizedBox(
+            const SizedBox(
               width: 400,
               child: Text(
                 'Are you sure you want to book the slot \nfor May 10th 2022 ( Sunday ). Confirm and\npay an advance booking amount .',
@@ -47,10 +47,10 @@ Future<void> dialogBuilder(BuildContext context) {
                     clipBehavior: Clip.hardEdge,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        Color(0xffFFFFFF),
+                        const Color(0xffFFFFFF),
                       ),
                       side: MaterialStateProperty.all(
-                        BorderSide(
+                        const BorderSide(
                           color: Color(0xFF3792C4),
                           width: 2.0,
                         ),
@@ -60,7 +60,7 @@ Future<void> dialogBuilder(BuildContext context) {
                     child: Text(
                       'Cancel',
                       style: TextStyle(
-                        color: Color(0xFF3792C4),
+                        color: const Color(0xFF3792C4),
                         fontSize: 18.sp,
                         fontFamily: 'Fira Sans Condensed',
                         fontWeight: FontWeight.w600,
@@ -76,10 +76,10 @@ Future<void> dialogBuilder(BuildContext context) {
                       clipBehavior: Clip.hardEdge,
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all(Color(0xff3792C4)),
+                            MaterialStateProperty.all(const Color(0xff3792C4)),
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'CONFIRM',
                         style: TextStyle(
                           color: Colors.white,

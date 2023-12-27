@@ -43,7 +43,7 @@ class HorizontalCalendarTurf extends StatefulWidget {
     required this.onDateSelected,
   })  : initialDate = DateUtils.dateOnly(initialDate ?? DateTime.now()),
         lastDate = DateUtils.dateOnly(
-            lastDate ?? DateTime.now().add(Duration(days: 90))) {
+            lastDate ?? DateTime.now().add(const Duration(days: 90))) {
     assert(
       !this.lastDate.isBefore(this.initialDate),
       'lastDate ${this.lastDate} must be on or after initialDate ${this.initialDate}.',
@@ -103,14 +103,14 @@ class _CalendarState extends State<HorizontalCalendarTurf> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height / 100;
-    _startDate = selectedDate.subtract(Duration(days: 3));
+    _startDate = selectedDate.subtract(const Duration(days: 3));
 
     return Container(
       height: height * (widget.showMonth ? 12 : 11),
       color: widget.backgroundColor ?? Colors.white,
       child: ListTile(
         dense: true,
-        contentPadding: EdgeInsets.all(10.0),
+        contentPadding: const EdgeInsets.all(10.0),
         title: widget.showMonth
             ? Text(
                 DateFormat.yMMM(widget.locale.toString()).format(selectedDate),
@@ -120,7 +120,7 @@ class _CalendarState extends State<HorizontalCalendarTurf> {
                           Theme.of(context).primaryColor,
                     ),
               )
-            : Offstage(),
+            : const Offstage(),
         subtitle: Row(
           children: <Widget>[
             Expanded(

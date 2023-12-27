@@ -51,7 +51,7 @@ class HomeDetails extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Text(
@@ -65,7 +65,7 @@ class HomeDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 3.w),
-                        Expanded(child: Icon(CupertinoIcons.heart_fill))
+                        const Expanded(child: Icon(CupertinoIcons.heart_fill))
                       ],
                     ),
                     const SizedBox(height: 15),
@@ -81,7 +81,7 @@ class HomeDetails extends StatelessWidget {
                           const SizedBox(width: 10),
                           Text(
                             adress,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF3792C4),
                               fontSize: 10,
                               fontFamily: 'Fira Sans',
@@ -98,7 +98,7 @@ class HomeDetails extends StatelessWidget {
                       height: 41,
                       child: Text(
                         discrption,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color(0xFF757575),
                           fontSize: 11,
                           fontFamily: 'Fira Sans',
@@ -122,7 +122,7 @@ class HomeDetails extends StatelessWidget {
                           ),
                           Text(
                             time,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF00A040),
                               fontSize: 11,
                               fontFamily: 'Fira Sans',

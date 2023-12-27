@@ -10,6 +10,7 @@ import 'package:sn_progress_dialog/progress_dialog.dart';
 import 'package:turf_tender/data/repository/user_repo/auth_repo.dart';
 import 'package:turf_tender/domain/entities/request/user_signup_model.dart';
 import 'package:turf_tender/domain/entities/response/user_signup_res_model.dart';
+import 'package:turf_tender/presentation/user_register_page/widgets/otp.dart';
 import 'package:turf_tender/presentation/user_register_page/widgets/user_owner_avatar.dart';
 
 part 'user_register_event.dart';
@@ -53,8 +54,10 @@ class UserRegisterBloc extends Bloc<UserRegisterEvent, UserRegisterState> {
             otp: event.otp,
           ),
         );
+
         if (response != null && response.error != null) {
           emit(const _UserRegisterOtpSuccess());
+          emit(const _ShouldShowOtp(otp: true));
         } else {
           emit(_UserRegisterOtpFail(error: response?.error ?? "unknown error"));
         }

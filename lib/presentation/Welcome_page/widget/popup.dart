@@ -12,7 +12,7 @@ class PopupContainer extends StatelessWidget {
       child: Container(
         height: 176.h,
         width: 359.w,
-        padding: EdgeInsets.all(16).w,
+        padding: const EdgeInsets.all(16).w,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

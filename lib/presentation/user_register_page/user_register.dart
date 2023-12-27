@@ -31,8 +31,18 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
     progressDialog = ProgressDialog(context: context);
   }
 
+  // bool showOtp(BuildContext ctx, UserRegisterState state) {
+  //   if (state is _ShouldShowOtp) {
+  //     return state.otp;
+  //   }
+  //   return false;
+  // }
+
   @override
   Widget build(BuildContext context) {
+    print("otpppppppp");
+    bool shouldShowOtp = false;
+    print(shouldShowOtp);
     return Scaffold(
       body: SingleChildScrollView(
         child: BlocListener<UserRegisterBloc, UserRegisterState>(
@@ -128,11 +138,11 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                       FilteringTextInputFormatter.allow(RegExp(r"[a-zA-Z]")),
                     ],
                     decoration: InputDecoration(
-                        fillColor: Color(0xFFF2F2F2),
+                        fillColor: const Color(0xFFF2F2F2),
                         labelText: 'Name',
                         border: OutlineInputBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10).w))),
+                                BorderRadius.all(const Radius.circular(10).w))),
                   ),
                 ),
               ),
@@ -154,11 +164,11 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                       FilteringTextInputFormatter.allow(RegExp(r"[0-9]")),
                     ],
                     decoration: InputDecoration(
-                        fillColor: Color(0xFFF2F2F2),
+                        fillColor: const Color(0xFFF2F2F2),
                         labelText: 'Mobile number',
                         border: OutlineInputBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10).w))),
+                                BorderRadius.all(const Radius.circular(10).w))),
                   ),
                 ),
               ),
@@ -181,11 +191,11 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                           RegExp(r"[a-zA-Z0-9@.]")),
                     ],
                     decoration: InputDecoration(
-                        fillColor: Color(0xFFF2F2F2),
+                        fillColor: const Color(0xFFF2F2F2),
                         labelText: 'Email',
                         border: OutlineInputBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(10).w))),
+                                BorderRadius.all(const Radius.circular(10).w))),
                   ),
                 ),
               ),
@@ -227,7 +237,22 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 100.h),
+              SizedBox(height: 10.h),
+              BlocBuilder<UserRegisterBloc, UserRegisterState>(
+                builder: (context, state) {
+                  bool shouldShowOtp = showOtp(context, state);
+                  print(shouldShowOtp);
+                  return Column(
+                    children: [
+                      Visibility(
+                        visible: shouldShowOtp,
+                        child: Otp(),
+                      ),
+                      SizedBox(height: 20.h),
+                    ],
+                  );
+                },
+              ),
               SizedBox(
                 height: 59.h,
                 width: 356.w,
@@ -237,15 +262,18 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10).w),
-                          backgroundColor: Color(0xFF3792C4),
+                          backgroundColor: const Color(0xFF3792C4),
                           foregroundColor: Colors.white),
                       onPressed: () {
-                        context.read<UserRegisterBloc>().add(_OnRegisterCliked(
-                            name: _nameController.text,
-                            mobileNumber: _mobileNumberController.text,
-                            userName: _emailController.text,
-                            password: _passwordController.text,
-                            avatar: " skd ks d"));
+                        context.read<UserRegisterBloc>().add(
+                              _OnRegisterCliked(
+                                name: _nameController.text,
+                                mobileNumber: _mobileNumberController.text,
+                                userName: _emailController.text,
+                                password: _passwordController.text,
+                                avatar: " skd ks d",
+                              ),
+                            );
                       },
                       child: Text(
                         'SEND OTP',
@@ -279,13 +307,29 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
     } else {
       progressDialog.close();
       if (state is _UserRegisterSuccess) {
-        ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
-            content: Text(state.response.user?.toString() ??
-                state.response.error.toString())));
+        ScaffoldMessenger.of(ctx).showSnackBar(
+          SnackBar(
+            content: Text(
+              state.response.user?.toString() ??
+                  state.response.error.toString(),
+            ),
+          ),
+        );
       } else if (state is _UserRegisterFail) {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text(state.error)));
       }
     }
   }
+
+  bool showOtp(BuildContext ctx, UserRegisterState state) {
+    if (state is _ShouldShowOtp) {
+      return state.otp; // Return the value of the otp property
+    } else if (state is _UserRegisterSuccess) {
+      return true; // Show OTP when registration is successful
+    }
+    return false; // Hide OTP for other states
+  }
+
+  // Add a function to determine whether to show OTP or not
 }
