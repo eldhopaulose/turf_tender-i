@@ -7,7 +7,7 @@ extension EndPointsData on EndPoints {
     String path = "";
     switch (this) {
       case EndPoints.login:
-        path = "";
+        path = "/users/login";
       case EndPoints.userSIgnup:
         path = "/users/signup";
       case EndPoints.userSIgnupOtp:

@@ -386,10 +386,13 @@ class _UserRegisterScreenState extends State<UserRegisterScreen> {
       progressDialog.close();
       ScaffoldMessenger.of(ctx).showSnackBar(
         SnackBar(
-          content: Text(state.response.userOtp?.toString() ??
-              state.response.error.toString()),
+          content:
+              Text(state.response.success ?? state.response.error.toString()),
         ),
       );
+      if (state.response.success == "Registration Success") {
+        context.router.pushNamed('/');
+      }
     } else if (state is _UserRegisterFail) {
       print("UserRegisterFail state triggered");
       progressDialog.close();

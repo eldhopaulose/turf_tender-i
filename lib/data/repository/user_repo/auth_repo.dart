@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:turf_tender/data/datasource/dio_client.dart';
 import 'package:turf_tender/data/datasource/endpoints.dart';
+import 'package:turf_tender/domain/entities/request/user_login_req_model.dart';
 import 'package:turf_tender/domain/entities/request/user_signup_model.dart';
 import 'package:turf_tender/domain/entities/response/otp_user_res.dart';
+import 'package:turf_tender/domain/entities/response/user_login_res_model.dart';
 import 'package:turf_tender/domain/entities/response/user_signup_res_model.dart';
 
 class AuthRepo {
@@ -71,5 +73,37 @@ class AuthRepo {
       }
     }
     return OtpUserRes(error: "Some thing is problem?");
+  }
+
+  Future<UserLoginResModel?> loginReques(
+      UserLoginReqModel userLoginReqModel) async {
+    try {
+      final response = await dioClient.mainReqRes(
+        endPoints: EndPoints.login,
+        data: userLoginReqModel.toJson(),
+      );
+      if (response.statusCode == 200) {
+        final loginResponse = UserLoginResModel.fromJson(response.data);
+        if (loginResponse.token != null) {
+          return loginResponse;
+        } else {
+          return UserLoginResModel(error: "Some thing is problem?");
+        }
+      } else {
+        final loginResponse = UserLoginResModel.fromJson(response.data);
+        if (response.statusCode == 400) {
+          return loginResponse;
+        } else {
+          return UserLoginResModel(error: "Some thing is problem?");
+        }
+      }
+    } on DioException catch (e) {
+      if (e.response!.data != null) {
+        final loginErrorResponse = UserLoginResModel.fromJson(e.response!.data);
+        return loginErrorResponse;
+      } else {
+        return UserLoginResModel(error: "Some thing is problem?");
+      }
+    }
   }
 }
