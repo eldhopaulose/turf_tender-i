@@ -64,17 +64,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               SizedBox(height: 5.h),
               Padding(
-                padding: const EdgeInsets.only(left: 15, right: 15).r,
+                padding: const EdgeInsets.all(30).r,
                 child: Container(
-                    height: 350.h,
-                    width: 350.w,
+                    height: 220.h,
+                    width: double.infinity,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
-                      image: AssetImage('images/turf wall.jpeg'),
+                      image: AssetImage('images/bg.png'),
                       fit: BoxFit.fill,
                     ))),
               ),
-              SizedBox(height: 24.h),
+              SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -96,7 +96,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 48.h),
+              SizedBox(height: 10.h),
               SizedBox(
                 height: 59.h,
                 width: 356.w,
@@ -122,7 +122,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 9.h),
+              SizedBox(height: 5.h),
               SizedBox(
                 height: 59.h,
                 width: 356.w,
@@ -160,7 +160,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               SizedBox(
                 height: 59.h,
                 width: 356.w,
@@ -191,7 +191,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       )),
                 ),
               ),
-              SizedBox(height: 21.h),
+              SizedBox(height: 15.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -244,7 +244,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       if (state is _LoginSuccess) {
         progressDialog.close();
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("success")));
+            .showSnackBar(const SnackBar(content: Text("success")));
         context.router.pushNamed('/nav');
       } else if (state is _LoginFail) {
         progressDialog.close();

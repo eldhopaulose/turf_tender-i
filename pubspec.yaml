@@ -39,6 +39,7 @@ dependencies:
   flutter_otp_text_field: ^1.1.1
   flutter_screenutil: ^5.9.0
   freezed_annotation: ^2.4.1
+  get: ^4.6.6
   horizontal_calendar: ^1.1.2
   json_annotation: ^4.8.1
   persistent_bottom_nav_bar: ^5.0.2

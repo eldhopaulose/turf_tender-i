@@ -48,7 +48,7 @@ abstract class _$AppRouter extends RootStackRouter {
     WelcomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const WelcomeScreen(),
+        child: WrappedRoute(child: const WelcomeScreen()),
       );
     },
   };

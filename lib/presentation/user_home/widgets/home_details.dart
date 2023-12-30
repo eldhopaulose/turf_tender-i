@@ -65,7 +65,11 @@ class HomeDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 3.w),
-                        const Expanded(child: Icon(CupertinoIcons.heart_fill))
+                        const Expanded(
+                            child: Icon(
+                          CupertinoIcons.heart_fill,
+                          size: 20,
+                        ))
                       ],
                     ),
                     const SizedBox(height: 15),
@@ -132,7 +136,7 @@ class HomeDetails extends StatelessWidget {
                           )
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               )

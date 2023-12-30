@@ -18,6 +18,7 @@ class DioClient {
   }
   Future<dynamic> mainReqRes({
     required EndPoints endPoints,
+    String? parameter,
     Map<String, dynamic>? data,
     Map<String, dynamic>? headers,
   }) async {
@@ -25,11 +26,16 @@ class DioClient {
     if (headers != null) {
       _dio.options.headers.addAll(headers);
     }
+    if (endPoints.hasToken()) {
+      String? _token = token;
+      _dio.options.headers
+          .addAll({"Authorization": "Bearer ${_token ?? "No Token"}"});
+    }
     try {
       switch (endPoints.type()) {
         case ReqType.GET:
           response = await _dio.get(
-            "$baseUrl${endPoints.path()}",
+            "$baseUrl${endPoints.path()}/${parameter}",
             queryParameters: data,
           );
         case ReqType.POST:

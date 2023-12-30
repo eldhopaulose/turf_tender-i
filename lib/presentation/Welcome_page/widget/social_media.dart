@@ -19,12 +19,12 @@ class SocialMediaContainer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(10).w,
         child: Container(
-          height: 47.h,
-          width: 47.w,
+          height: 47,
+          width: 47,
           decoration: ShapeDecoration(
             color: backgroundColor,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(50).w,
+              borderRadius: BorderRadius.circular(100).w,
             ),
           ),
           child: Stack(
