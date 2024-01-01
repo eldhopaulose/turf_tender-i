@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +20,9 @@ part 'user_home_bloc.freezed.dart';
 part '../user_home.dart';
 
 class UserHomeBloc extends Bloc<UserHomeEvent, UserHomeState> {
+
+  StreamController<UserHomeResModel?> userHomeResController = StreamController<UserHomeResModel?>.broadcast();
+  Stream<UserHomeResModel?>  get userHomeStream => userHomeResController.stream;
   UserHomeBloc() : super(const _Initial()) {
     on<_GetDataEvent>((event, emit) async {
       final UserHomeRepo userHomeRepo = UserHomeRepo();
@@ -32,5 +37,11 @@ class UserHomeBloc extends Bloc<UserHomeEvent, UserHomeState> {
         emit(_Failed(error: e.toString()));
       }
     });
+  }
+
+  Future featchData({required String para}) async {
+    final UserHomeRepo userHomeRepo = UserHomeRepo();
+    final response = await userHomeRepo.userHomeRes(para);
+    userHomeResController.add(response);
   }
 }

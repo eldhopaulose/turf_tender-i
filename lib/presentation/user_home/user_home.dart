@@ -15,11 +15,12 @@ class UserHomeScreen extends StatefulWidget implements AutoRouteWrapper {
 
 class _UserHomeScreenState extends State<UserHomeScreen> {
   late ProgressDialog progressDialog;
-
+  // String? para;
   @override
   void initState() {
     super.initState();
     progressDialog = ProgressDialog(context: context);
+    context.read<UserHomeBloc>().featchData(para: 'footbal');
   }
 
   @override
@@ -73,31 +74,33 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0).r,
-                  child: BlocListener<UserHomeBloc, UserHomeState>(
-                    listener: _getDataListner,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            context.read<UserHomeBloc>().add(_GetDataEvent(
-                                category: Category.Football.category()));
-                          },
-                          child: IconContainer(
-                            icons:
-                                'https://ik.imagekit.io/wdjnrplts/Icons/Vector-3_GgygmyeHQ.png?updatedAt=1703517376519',
-                            name: 'Football',
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        IconContainer(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      InkWell(
+                        onTap: () {
+
+                          context
+                              .read<UserHomeBloc>()
+                              .featchData(para: "footbal");
+                        },
+                        child: const IconContainer(
                           icons:
-                              'https://ik.imagekit.io/wdjnrplts/Icons/Vector-3_GgygmyeHQ.png?updatedAt=1703517376519',
+                          'https://ik.imagekit.io/wdjnrplts/Icons/Vector-3_GgygmyeHQ.png?updatedAt=1703517376519',
+                          name: 'Football',
+                        ),
+                      ),
+                      SizedBox(width: 15),
+                      InkWell(
+                        onTap: ()=> context.read<UserHomeBloc>().featchData(para: "Cricket"),
+                        child: IconContainer(
+                          icons:
+                          'https://ik.imagekit.io/wdjnrplts/Icons/Vector-3_GgygmyeHQ.png?updatedAt=1703517376519',
                           name: 'Cricket',
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -181,30 +184,43 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context)
                       .copyWith(scrollbars: false),
-                  child: ListView.builder(
-                    itemCount: 10,
-                    itemExtent: 220.0,
-                    shrinkWrap: true,
-                    clipBehavior: Clip.antiAlias,
-                    itemBuilder: (context, index) {
-                      return HomeDetails(
-                        mainImage:
+                  child:  StreamBuilder<UserHomeResModel?>(
+                      stream: context.read<UserHomeBloc>().userHomeStream,
+                    initialData: null,
+                    builder: (context, snapshot) {
+                      print(snapshot.data?.turf?.length);
+                      if(snapshot.data == null)
+                          return const Center(
+                            child: Text("NO DATA FOUND"),
+                          );
+                      return ListView.builder(
+                        itemCount: snapshot.data?.turf?.length ?? 0,
+                        itemExtent: 220.0,
+                        shrinkWrap: true,
+                        clipBehavior: Clip.antiAlias,
+                        itemBuilder: (context, index) {
+                          return HomeDetails(
+                            mainImage:
                             'https://i2.wp.com/cricketgraph.com/wp-content/uploads/2022/09/JES-Turf-Jogeshwari-1.jpg?fit=763%2C405&ssl=1',
-                        turf: 'ABC Soccer Club\nKakkanad',
-                        adress: 'kakkanad infopark \ncampus',
-                        discrption:
+                            turf: 'ABC Soccer Club\nKakkanad',
+                            adress: 'kakkanad infopark \ncampus',
+                            discrption:
                             'Lorem ipsum dolor sit amet consectetur. Consequat fames pellentesque elementum.',
-                        time: 'Mon - sun 4am - 12am',
+                            time: 'Mon - sun 4am - 12am',
+                          );
+                        },
                       );
-                    },
+                    }
                   ),
                 ),
               ),
             ),
           ],
-        ),
-      ),
-    );
+        )
+
+
+
+    ));
   }
 
   _getDataListner(BuildContext context, UserHomeState state) {
