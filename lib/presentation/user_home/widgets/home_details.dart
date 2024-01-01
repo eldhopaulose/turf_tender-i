@@ -83,14 +83,16 @@ class HomeDetails extends StatelessWidget {
                             height: 18.h,
                           ),
                           const SizedBox(width: 10),
-                          Text(
-                            adress,
-                            style: const TextStyle(
-                              color: Color(0xFF3792C4),
-                              fontSize: 10,
-                              fontFamily: 'Fira Sans',
-                              fontWeight: FontWeight.w300,
-                              height: 0,
+                          Expanded(
+                            child: Text(
+                              adress,
+                              style: const TextStyle(
+                                color: Color(0xFF3792C4),
+                                fontSize: 12,
+                                fontFamily: 'Fira Sans',
+                                fontWeight: FontWeight.w300,
+                                height: 0,
+                              ),
                             ),
                           ),
                         ],
@@ -124,14 +126,16 @@ class HomeDetails extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          Text(
-                            time,
-                            style: const TextStyle(
-                              color: Color(0xFF00A040),
-                              fontSize: 11,
-                              fontFamily: 'Fira Sans',
-                              fontWeight: FontWeight.w400,
-                              height: 0,
+                          Expanded(
+                            child: Text(
+                              time,
+                              style: const TextStyle(
+                                color: Color(0xFF00A040),
+                                fontSize: 11,
+                                fontFamily: 'Fira Sans',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
                             ),
                           )
                         ],

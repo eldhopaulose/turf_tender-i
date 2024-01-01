@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:get/get.dart' as G;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:turf_tender/constants/constants.dart';
 import 'package:turf_tender/data/datasource/endpoints.dart';
+import 'package:turf_tender/domain/entities/response/user_login_res_model.dart';
 
 class DioClient {
   final Dio _dio;
@@ -27,7 +29,8 @@ class DioClient {
       _dio.options.headers.addAll(headers);
     }
     if (endPoints.hasToken()) {
-      String? _token = token;
+      String? _token = G.Get.find<UserLoginResModel>().token;
+      print(_token);
       _dio.options.headers
           .addAll({"Authorization": "Bearer ${_token ?? "No Token"}"});
     }

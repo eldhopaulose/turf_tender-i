@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:get/get.dart';
 import 'package:turf_tender/data/datasource/dio_client.dart';
 import 'package:turf_tender/data/datasource/endpoints.dart';
 import 'package:turf_tender/domain/entities/request/user_login_req_model.dart';
@@ -85,6 +86,7 @@ class AuthRepo {
       if (response.statusCode == 200) {
         final loginResponse = UserLoginResModel.fromJson(response.data);
         if (loginResponse.token != null) {
+          Get.find<UserLoginResModel>().token = loginResponse.token;
           return loginResponse;
         } else {
           return UserLoginResModel(error: "Some thing is problem?");
