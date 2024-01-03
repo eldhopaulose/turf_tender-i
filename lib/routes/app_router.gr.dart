@@ -28,15 +28,16 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
     TurfDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<TurfDetailRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const TurfDetailScreen(),
+        child: WrappedRoute(child: TurfDetailScreen(id: args.id)),
       );
     },
     UserHomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: WrappedRoute(child: const UserHomeScreen()),
+        child: const UserHomeScreen(),
       );
     },
     UserRegisterRoute.name: (routeData) {
@@ -84,16 +85,31 @@ class OwnerRegisterRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [TurfDetailScreen]
-class TurfDetailRoute extends PageRouteInfo<void> {
-  const TurfDetailRoute({List<PageRouteInfo>? children})
-      : super(
+class TurfDetailRoute extends PageRouteInfo<TurfDetailRouteArgs> {
+  TurfDetailRoute({
+    required String id,
+    List<PageRouteInfo>? children,
+  }) : super(
           TurfDetailRoute.name,
+          args: TurfDetailRouteArgs(id: id),
           initialChildren: children,
         );
 
   static const String name = 'TurfDetailRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<TurfDetailRouteArgs> page =
+      PageInfo<TurfDetailRouteArgs>(name);
+}
+
+class TurfDetailRouteArgs {
+  const TurfDetailRouteArgs({required this.id});
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'TurfDetailRouteArgs{id: $id}';
+  }
 }
 
 /// generated route for

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:turf_tender/presentation/Welcome_page/bloc/login_bloc.dart';
 import 'package:turf_tender/presentation/nav/nav.dart';
 import 'package:turf_tender/presentation/owner_register_page/owner_register.dart';
-import 'package:turf_tender/presentation/turf_details/turf_details.dart';
+import '../presentation/turf_details/bloc/turf_single_detail_bloc.dart';
 import 'package:turf_tender/presentation/user_home/bloc/user_home_bloc.dart';
 import 'package:turf_tender/presentation/user_register_page/bloc/user_register_bloc.dart';
 

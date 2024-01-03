@@ -1,16 +1,11 @@
 part of './bloc/user_home_bloc.dart';
 
 @RoutePage()
-class UserHomeScreen extends StatefulWidget implements AutoRouteWrapper {
+class UserHomeScreen extends StatefulWidget {
   const UserHomeScreen({super.key});
 
   @override
   State<UserHomeScreen> createState() => _UserHomeScreenState();
-
-  @override
-  Widget wrappedRoute(BuildContext context) {
-    return Provider(create: (ctx) => UserHomeBloc(), child: this);
-  }
 }
 
 class _UserHomeScreenState extends State<UserHomeScreen> {
@@ -215,6 +210,9 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                                 return InkWell(
                                   onTap: () {
                                     print(turf?.sId ?? "");
+                                    final id = turf?.sId;
+                                    context.router.push(
+                                        TurfDetailRoute(id: id.toString()));
                                   },
                                   child: HomeDetails(
                                     mainImage: turf?.images?[0] ?? "",

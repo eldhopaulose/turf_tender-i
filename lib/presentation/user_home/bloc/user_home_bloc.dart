@@ -13,6 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:turf_tender/presentation/user_home/utility/util.dart';
 import 'package:turf_tender/presentation/user_home/widgets/home_details.dart';
 import 'package:turf_tender/presentation/user_home/widgets/icon_container.dart';
+import 'package:turf_tender/routes/app_router.dart';
 
 part 'user_home_event.dart';
 part 'user_home_state.dart';
@@ -20,9 +21,9 @@ part 'user_home_bloc.freezed.dart';
 part '../user_home.dart';
 
 class UserHomeBloc extends Bloc<UserHomeEvent, UserHomeState> {
-
-  StreamController<UserHomeResModel?> userHomeResController = StreamController<UserHomeResModel?>.broadcast();
-  Stream<UserHomeResModel?>  get userHomeStream => userHomeResController.stream;
+  StreamController<UserHomeResModel?> userHomeResController =
+      StreamController<UserHomeResModel?>.broadcast();
+  Stream<UserHomeResModel?> get userHomeStream => userHomeResController.stream;
   UserHomeBloc() : super(const _Initial()) {
     on<_GetDataEvent>((event, emit) async {
       final UserHomeRepo userHomeRepo = UserHomeRepo();
