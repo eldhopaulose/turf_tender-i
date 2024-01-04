@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-Future<void> dialogBuilder(BuildContext context) {
+Future<void> dialogBuilder(BuildContext context, Function(bool) butnStateCall) {
   return showModalBottomSheet<void>(
     context: context,
     builder: (BuildContext context) {
@@ -78,7 +78,9 @@ Future<void> dialogBuilder(BuildContext context) {
                         backgroundColor:
                             MaterialStateProperty.all(const Color(0xff3792C4)),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        butnStateCall(true);
+                      },
                       child: const Text(
                         'CONFIRM',
                         style: TextStyle(

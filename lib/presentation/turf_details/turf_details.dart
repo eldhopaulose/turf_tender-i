@@ -16,6 +16,8 @@ class TurfDetailScreen extends StatefulWidget implements AutoRouteWrapper {
 
 class _TurfDetailScreenState extends State<TurfDetailScreen> {
   var selectedDate = DateTime.now();
+  int? getDate;
+  String? getTime;
 
   @override
   Widget build(BuildContext context) {
@@ -299,6 +301,7 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                             locale: Localizations.localeOf(context),
                             onDateSelected: (date) {
                               print(date.toString());
+                              getDate = date;
                             },
                           ),
                         ),
@@ -316,7 +319,13 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                                   width: 320.w,
                                   child: Padding(
                                     padding: const EdgeInsets.all(10).r,
-                                    child: DateContainer(date: time.toString()),
+                                    child: InkWell(
+                                        onTap: () {
+                                          getTime = time.toString();
+                                          print(getTime);
+                                        },
+                                        child: DateContainer(
+                                            date: time.toString())),
                                   ),
                                 );
                               }),
@@ -343,7 +352,22 @@ class _TurfDetailScreenState extends State<TurfDetailScreen> {
                               const Color(0xff3792C4)),
                         ),
                         onPressed: () {
-                          dialogBuilder(context);
+                          dialogBuilder(context, (bool result) {
+                            if (result) {
+                              context.read<TurfSingleDetailBloc>().bookingData(
+                                    id: widget.id,
+                                    date: getDate.toString(),
+                                    rate: 1500,
+                                    time: getTime.toString(),
+                                  );
+                              print('Booking confirmed');
+                              // Add your logic here
+                            } else {
+                              // User clicked "Cancel"
+                              print('Booking canceled');
+                              // Add your logic here
+                            }
+                          });
                         },
                         child: const Text(
                           'BOOK YOUR SLOT',
